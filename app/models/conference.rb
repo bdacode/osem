@@ -53,8 +53,7 @@ class Conference < ActiveRecord::Base
                         :short_title,
                         :social_tag
   validates_uniqueness_of :short_title
-  validates_format_of :short_title, :with => /^[a-zA-Z0-9_-]*$/
-   
+  validates_format_of :short_title, :with => /\A[a-zA-Z0-9_-]*\z/
   before_create :generate_guid
   before_create :create_venue
   before_create :create_email_settings

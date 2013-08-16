@@ -8,6 +8,13 @@ Osem::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+
+  # Eager load code on boot. This eager loads most of Rails and
+  # your application in memory, allowing both thread web servers
+  # and those relying on copy on write to perform better.
+  # Rake tasks automatically ignore this option for performance.
+  config.eager_load = true
+
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
   # Compress JavaScripts and CSS
@@ -65,5 +72,4 @@ Osem::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
   config.action_mailer.default_url_options = { :host => CONFIG['url_for_emails'] }
-
 end
