@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   has_many :event_people, :dependent => :destroy
   has_many :event_attachments, :dependent => :destroy
   has_many :people, :through => :event_people
-  has_many :speakers, :through => :event_people, :source => :person, :conditions => {"event_people.event_role" => "speaker"}
+  has_many :speakers, :through => :event_people, :source => :person
   has_many :votes
   has_many :voters, :through => :votes, :source => :person
   belongs_to :event_type
@@ -36,7 +36,7 @@ class Event < ActiveRecord::Base
   validates :abstract, :presence => true
   validates :media_type, inclusion: {in: self.media_types.values}
 
-  scope :confirmed, where(:state => "confirmed")
+  scope :confirmed, -> { where(state: 'confirmed') }
 
   state_machine :initial => :new do
     state :new

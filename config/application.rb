@@ -60,8 +60,5 @@ module Osem
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-    
-    # We use the old method because cancan isn't fully ported to rails 4 yet...
-    config.active_record.whitelist_attributes = true
   end
 end

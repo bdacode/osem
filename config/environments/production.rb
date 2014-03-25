@@ -8,7 +8,6 @@ Osem::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
   # and those relying on copy on write to perform better.
@@ -67,9 +66,6 @@ Osem::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  # Log the query plan for queries taking more than this (works
-  # with SQLite, MySQL, and PostgreSQL)
-  # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  
+  # Set the detault url for action mailer
   config.action_mailer.default_url_options = { :host => CONFIG['url_for_emails'] }
 end

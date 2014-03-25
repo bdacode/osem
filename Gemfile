@@ -1,13 +1,34 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Use rails as framework 
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use mysql as the database for Active Record
+gem 'mysql2'
+
+# Use rails-observers for observing records
+gem 'rails-observers'
+
+# User paper_trail for tracking data changes
+gem 'paper_trail'
+
+# Use devise as authentification framework
+gem 'devise'
+
+# Use cancan as authorization framework
+gem 'cancan'
+
+# Use transitions as state machine
+gem 'transitions', :require => ["transitions", "active_record/transitions"]
+
+# Use acts_as_commentable_with_threading for comments
+gem 'acts_as_commentable_with_threading'
+
+# Use haml as templating language
+gem "haml-rails"
 
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem "sass-rails", ">= 4.0.2"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -16,44 +37,43 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass'
 gem 'formtastic-bootstrap'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-group :development, :test do
-  gem 'pry'
-  gem 'sqlite3'
-  gem 'thin'
-  gem 'letter_opener'
-  gem 'rspec-rails'
-end
-
-group :production do
-  gem 'mysql2'
-  gem 'rspec-rails', '2.11.0'
-end
-
-group :test do
-  gem 'capybara'
-end
-
-gem 'will_paginate'
-gem 'paperclip'
+# Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-fileupload-rails'
-gem 'devise'
-gem 'cancan'
-gem 'protected_attributes'
-gem "haml-rails"
-gem 'bcrypt-ruby'
-gem 'paper_trail'
 gem 'cocoon'
-gem 'transitions', :require => ["transitions", "active_record/transitions"]
-gem 'acts_as_commentable_with_threading'
+
+# Use gravtastic for user avatars
+gem 'gravtastic'
+
+# Use paperclip for upload management
+gem 'paperclip'
+
+# Use prawn as PDF generator
 gem 'prawn'
 gem 'prawn_rails'
-gem 'gravtastic'
-gem 'active_model_serializers'
+
+# Use axlsx_rails to render XLS spreadsheets
 gem 'axlsx_rails'
+
+# Use d3js for building our statistics
 gem 'd3_rails'
-gem 'rails-observers'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Use active_model_serializers for JSON serializatioin our API
+gem 'active_model_serializers'
+
+# Use sqlite3 as the database in development
+gem 'sqlite3', group: [:development]
+
+# Use letter_opener to open mails in development
+gem 'letter_opener', group: [:development]
+
+# Use rspec and capybara as testing framework
+gem 'rspec-rails', group: [:test]
+gem 'capybara', group: [:test]
+
+# FIXME: We should use http://weblog.rubyonrails.org/2012/3/21/strong-parameters/ 
+gem 'protected_attributes'

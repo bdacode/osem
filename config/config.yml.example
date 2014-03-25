@@ -1,10 +1,12 @@
 defaults: &defaults
   # The sender address of emails
-  devise_mail_sender: no-reply@localhost
+  sender_for_emails: no-reply@localhost
   # The hostname to be used when building the URL in the emails
   url_for_emails: localhost:3000
-  # A secret key. You can generate one with 'rake secret'
-  devise_secret_key: 12345 
+  # A secret key for your rails app. You can generate one with 'rake secret'
+  secret_key: 12345 
+  # A secret key for devise. You can generate one with 'rake secret'
+  devise_secret_key: 67890
   # The name of your instance
   name: OSEM
 

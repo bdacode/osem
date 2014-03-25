@@ -31,5 +31,10 @@ Osem::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  # Do not eager load code on boot. 
+  config.eager_load = false
+
+  # Set the detault url for action mailer
   config.action_mailer.default_url_options = { :host => CONFIG['url_for_emails'] }
+
 end
