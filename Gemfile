@@ -37,7 +37,7 @@ group :test do
 end
 
 gem 'will_paginate'
-gem 'paperclip', '~> 3.0'
+gem 'paperclip'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-fileupload-rails'
